@@ -86,8 +86,11 @@ WSGI_APPLICATION = "greatkart.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "GreatKart",
+        "USER": 'postgres',
+        "PASSWORD": "superuser",
+        "HOST": "localhost",
     }
 }
 
