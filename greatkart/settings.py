@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     # project apps
     "category.apps.CategoryConfig",
     "accounts.apps.AccountsConfig",
+    "store.apps.StoreConfig",
+    
+    
     # pre-installed apps
     "django.contrib.admin",
     "django.contrib.auth",
