@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     # project apps
     "category.apps.CategoryConfig",
+    "accounts.apps.AccountsConfig",
     
     # pre-installed apps
     "django.contrib.admin",
@@ -79,6 +80,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "greatkart.wsgi.application"
+
+AUTH_USER_MODEL = 'accounts.Account'
 
 
 # Database
