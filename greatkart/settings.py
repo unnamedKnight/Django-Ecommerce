@@ -37,11 +37,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    
     # project apps
     "category.apps.CategoryConfig",
     "accounts.apps.AccountsConfig",
-    
     # pre-installed apps
     "django.contrib.admin",
     "django.contrib.auth",
@@ -81,7 +79,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "greatkart.wsgi.application"
 
-AUTH_USER_MODEL = 'accounts.Account'
+AUTH_USER_MODEL = "accounts.Account"
 
 
 # Database
@@ -91,7 +89,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "GreatKart",
-        "USER": 'postgres',
+        "USER": "postgres",
         "PASSWORD": "superuser",
         "HOST": "localhost",
     }
@@ -131,10 +129,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-    
+
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "greatkart/static"]
-# STATIC_ROOT = 
+# STATIC_ROOT =
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
 # Default primary key field type
