@@ -12,9 +12,11 @@ def home(request):
     '''
     
     products = Product.objects.filter(is_available=True)
+    categories = Category.objects.all()
     
     context = {
-        "products": products
+        "products": products,
+        "categories": categories,
     }
     
     return render(request, 'store/home.html', context)
@@ -25,12 +27,19 @@ def store(request, category_slug=None):
     if category_slug is None:
         products = Product.objects.filter(is_available=True)
     else:
+        # By using the get_object_or_404
+        # if the object is not found an 404 error will raised automatically
+        # we dont need to define other condition  to handle the error
+        
         category = get_object_or_404(Category, slug=category_slug)
-        products = Product.objects.filter(category=category)
+        products = Product.objects.filter(category=category, is_available=True)
+        
+    categories = Category.objects.all()
     
     
     context = {
-        "products": products
+        "products": products,
+        "categories": categories,
     }
     
     return render(request, 'store/store.html', context)
