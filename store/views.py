@@ -1,4 +1,3 @@
-from multiprocessing import context
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from .models import Product
@@ -52,7 +51,9 @@ def product_detail(request, category_slug, product_slug):
     product = Product.objects.get(slug=product_slug)
     categories = Category.objects.all()
 
-    context = {"product": product,
-               "categories": categories,}
+    context = {
+        "product": product,
+        "categories": categories,
+    }
 
     return render(request, "store/product-detail.html", context)
